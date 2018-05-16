@@ -1,6 +1,5 @@
 # vue-todo
 
-
 ## installation
 
 ### node
@@ -64,12 +63,8 @@ one screen
 
 VueTodoApp
 VueTodoListTitle
-VueTodoListItems
-VueTodoItem
-
-
-
-
+VueTodoList
+VueTodoTask
 
 
 ## TodoApp
@@ -112,14 +107,13 @@ export default {
   name: 'VueTodoApp',
   components: { },
   data: { },
-  computed: { },
   props: { },
+  computed: { },
   methods: { },
   
   // lifecycle
   beforeCreate: function () { },
   created: function () { },
-  beforeMount: function () { },
   beforeMount: function () { },
   mounted: function () { },
   beforeUpdate: function () { },
@@ -130,3 +124,45 @@ export default {
 
 Lifecycle: https://vuejs.org/images/lifecycle.png
 
+## TodoList
+
+v-for directive
+
+
+## TodoTask
+
+## properties
+
+export default {
+    props: {
+        'title': {
+            type: String,
+            required: true,
+            default: function () {
+                return 'thing to do';
+            }
+
+        }
+    }
+}
+
+## v-if and v-model
+
+<div>
+    <span v-if="complete">X </span>
+    <span @click="toggleComplete">{{title}}</span>
+    <button>edit</button>
+    <button>delete</button>
+</div>
+
+
+
+## methods
+
+    <span @click="toggleComplete">{{title}}</span>
+
+    methods: {
+        toggleComplete: function() {
+            this.complete = !this.complete;
+        }
+    }
