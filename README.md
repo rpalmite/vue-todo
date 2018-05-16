@@ -166,3 +166,39 @@ export default {
             this.complete = !this.complete;
         }
     }
+
+## editable and reactive
+
+    <div>
+        <span v-if="complete">X </span>
+        <input v-if="editing" v-model="title"></input>
+        <span v-if="!editing" @click="toggleComplete">{{title}}</span>
+        <button v-if="!editing" @click="editing = true">edit</button>
+        <button v-if="editing" @click="editing = false">save</button>
+        <button>delete</button>
+    </div>
+
+## delete and custom events
+
+on task
+
+methods:
+        deleteTask() {
+            this.$emit('delete-task', this)
+        }
+
+on list
+
+add v-on
+            <vue-todo-task :title="task.title" :complete="task.complete" v-on:delete-task="deleteTask"></vue-todo-task>
+
+
+methods:
+       deleteTask: function(taskToDelete) {
+            var i;
+            for (i=0; i<this.tasks.length; i++) {
+                if (this.tasks[i].title == taskToDelete.title) {
+                    this.tasks.splice(i, 1)
+                }
+            }
+        }
