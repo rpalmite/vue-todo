@@ -50,6 +50,15 @@ brower: localhost:8080
 
 ## planning cycle 1
 
+one screen
+
+4 components:
+
+TodoApp
+TodoListTitle
+TodoItems
+TodoItem
+
 
 
 
