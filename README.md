@@ -62,10 +62,71 @@ one screen
 
 4 components:
 
-TodoApp
-TodoListTitle
-TodoItems
-TodoItem
+VueTodoApp
+VueTodoListTitle
+VueTodoListItems
+VueTodoItem
 
 
+
+
+
+
+## TodoApp
+
+### step 1
+
+Example component:
+
+<template>
+    
+</template>
+
+<script>
+export default {
+    
+}
+</script>
+
+<style scoped>
+
+</style>
+
+### step 2
+Fix routing in router/index.js
+
+### step 3: template
+<template>
+    
+</template>
+
+
+
+
+### step 4: script
+
+Vue instance
+
+export default {
+  // standard
+  name: 'VueTodoApp',
+  components: { },
+  data: { },
+  computed: { },
+  props: { },
+  methods: { },
+  
+  // lifecycle
+  beforeCreate: function () { },
+  created: function () { },
+  beforeMount: function () { },
+  beforeMount: function () { },
+  mounted: function () { },
+  beforeUpdate: function () { },
+  updated: function () { },
+  beforeDestroy: function () { },
+  destroyed: function () { }
+}
+
+Lifecycle: https://vuejs.org/images/lifecycle.png
 
