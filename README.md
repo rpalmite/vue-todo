@@ -202,3 +202,49 @@ methods:
                 }
             }
         }
+
+
+
+
+
+###################
+
+# make everything pretty
+
+## imports
+
+npm install vuetify --save
+
+in main.js:
+
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+Vue.use(Vuetify)
+
+add roboto font to head of index.html
+
+<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+
+## app layout
+
+### in VueTodoApp
+
+<template>
+  <v-app>
+    <v-navigation-drawer fixed app></v-navigation-drawer>
+
+    <v-toolbar color="indigo" dark fixed app>
+      <v-toolbar-side-icon></v-toolbar-side-icon>
+      <v-toolbar-title>{{appTitle}}</v-toolbar-title>
+    </v-toolbar>
+
+    <v-content>
+        <vue-todo-list-title></vue-todo-list-title>
+        <vue-todo-list></vue-todo-list>
+    </v-content>
+  </v-app>
+</template>
+
+### in vueTodoTask
+
+<v-icon> and <v-btn>
